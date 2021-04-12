@@ -22,7 +22,9 @@ module.exports = {
                 'blue-hover': '#2879bd',
                 'yellow' : '#ffc73c',
                 'red' : '#ec454f',
-                'green' : '#1aab8b',
+                'green1' : '#1c5155',
+                'green' : '#35b0ba',
+
                 'purple' : '#8b60ed',
             },
             spacing: {
@@ -42,10 +44,12 @@ module.exports = {
             },
             fontFamily: {
                 sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
+                ram: ['Rambla', 'sans-serif'],
             },
             fontSize: {
                 xxs: ['0.625rem', { lineHeight: '1rem' }],
             },
+
         },
     },
 

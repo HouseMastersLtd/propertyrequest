@@ -18,8 +18,14 @@ class CreateIdeasTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('category_id')->constrained();
             $table->foreignId('status_id')->constrained();
-            $table->string('title');
+            $table->foreignId('location_id')->constrained();
+            $table->string('title')->nullable();;
+            $table->decimal('price', 8, 2);
+            $table->integer('no_of_bathrooms');
+            $table->integer('no_of_bedrooms');
+            $table->string('with_pool')->nullable();;
             $table->string('slug')->nullable();
+            $table->text('photo')->nullable();
             $table->text('description');
             $table->timestamps();
         });

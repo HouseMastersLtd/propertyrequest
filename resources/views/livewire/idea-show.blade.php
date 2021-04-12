@@ -1,22 +1,39 @@
-<div class="idea-and-buttons container">
+<div class="">
+
+
+
+
+    <div class="idea-and-buttons container">
 
         <div class="idea-container bg-white rounded-xl flex mt-4">
             <div class="flex flex-col md:flex-row flex-1 px-4 py-6">
-                <div class="flex-none mx-2">
-                    <a href="#">
-                        <img src="{{ $idea->user->getAvatar() }}" alt="avatar" class="w-14 h-14 rounded-xl">
-                    </a>
-                </div>
+{{--                <div class="flex-none mx-2">--}}
+{{--                    <a href="#">--}}
+{{--                        <img src="{{ $idea->user->getAvatar() }}" alt="avatar" class="w-14 h-14 rounded-xl">--}}
+{{--                    </a>--}}
+{{--                </div>--}}
                 <div class="w-full mx-2 md:mx-4">
-                    <h4 class="text-xl font-semibold mt-2 md:mt-0">
-                        {{ $idea->title }}
-                    </h4>
+{{--                    <h4 class="text-xl font-semibold mt-2 md:mt-0">--}}
+{{--                        {{ $idea->title }}--}}
+{{--                    </h4>--}}
+                    <div class=" mt-3">
+                   <img src="{{asset($idea->photo)}}" alt="{{ $idea->title}}">
+{{--                        @foreach (explode('|', $idea->photo) as $img)--}}
+{{--                            <br>--}}
+{{--                            <a class="image-popup-vertical-fit" href="{{$img}}">--}}
+{{--                                <img src="{{asset($img)}}" style="width:100%" alt="{{ $idea->title}}">--}}
+{{--                            </a>--}}
+{{--                        @endforeach--}}
+                    </div>
                     <div class="text-gray-600 mt-3">
                         {{ $idea->description }}
                     </div>
 
                     <div class="flex flex-col md:flex-row md:items-center justify-between mt-6">
                         <div class="flex items-center text-xs text-gray-400 font-semibold space-x-2">
+                            <a href="#">
+                                <img src="{{ $idea->user->getAvatar() }}" alt="avatar" class="w-14 h-14 rounded-xl">
+                            </a>
                             <div class="hidden md:block font-bold text-gray-900">{{ $idea->user->name }}</div>
                             <div class="hidden md:block">&bull;</div>
                             <div>{{ $idea->created_at->diffForHumans() }}</div>
@@ -34,7 +51,8 @@
                                 class="relative bg-gray-100 hover:bg-gray-200 border rounded-full h-7 transition duration-150 ease-in py-2 px-3"
                                 @click="isOpen = !isOpen"
                             >
-                                <svg fill="currentColor" width="24" height="6"><path d="M2.97.061A2.969 2.969 0 000 3.031 2.968 2.968 0 002.97 6a2.97 2.97 0 100-5.94zm9.184 0a2.97 2.97 0 100 5.939 2.97 2.97 0 100-5.939zm8.877 0a2.97 2.97 0 10-.003 5.94A2.97 2.97 0 0021.03.06z" style="color: rgba(163, 163, 163, .5)"></svg>
+                                <svg fill="currentColor" width="24" height="6"><path d="M2.97.061A2.969 2.969 0 000 3.031 2.968 2.968 0 002.97 6a2.97 2.97 0 100-5.94zm9.184 0a2.97 2.97 0 100 5.939 2.97 2.97 0 100-5.939zm8.877 0a2.97 2.97 0 10-.003 5.94A2.97 2.97 0 0021.03.06z" style="color: rgba(163, 163, 163, .5)">
+                                </svg>
                                 <ul
                                     class="absolute w-44 text-left font-semibold bg-white shadow-dialog rounded-xl z-10 py-3 md:ml-8 top-8 md:top-6 right-0 md:left-0"
                                     x-cloak
@@ -152,3 +170,6 @@
             </div>
         </div> <!-- end buttons-container -->
     </div>
+
+
+</div>

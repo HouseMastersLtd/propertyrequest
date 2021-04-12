@@ -7,6 +7,7 @@ use App\Models\Idea;
 use App\Models\Status;
 use App\Models\User;
 use App\Models\Vote;
+use App\Models\Location;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -25,21 +26,29 @@ class DatabaseSeeder extends Seeder
 
         User::factory(19)->create();
 
-        Category::factory()->create(['name' => 'Category 1']);
-        Category::factory()->create(['name' => 'Category 2']);
-        Category::factory()->create(['name' => 'Category 3']);
-        Category::factory()->create(['name' => 'Category 4']);
+        Category::factory()->create(['name' => 'House']);
+        Category::factory()->create(['name' => 'Apartment']);
+        Category::factory()->create(['name' => 'Studio']);
+        Category::factory()->create(['name' => 'Share']);
 
-        Status::factory()->create(['name' => 'Open', 'classes' => 'bg-gray-200']);
-        Status::factory()->create(['name' => 'Considering', 'classes' => 'bg-purple text-white']);
-        Status::factory()->create(['name' => 'In Progress', 'classes' => 'bg-yellow text-white']);
-        Status::factory()->create(['name' => 'Implemented', 'classes' => 'bg-green text-white']);
-        Status::factory()->create(['name' => 'Closed', 'classes' => 'bg-red text-white']);
+        Status::factory()->create(['name' => 'For Sale', 'classes' => 'bg-gray-200']);
+        Status::factory()->create(['name' => 'For Rent', 'classes' => 'bg-purple text-white']);
+        Status::factory()->create(['name' => 'Short term Only', 'classes' => 'bg-yellow text-white']);
+        Status::factory()->create(['name' => 'Not Available', 'classes' => 'bg-green text-white']);
+        Status::factory()->create(['name' => 'Coming Soon', 'classes' => 'bg-red text-white']);
+
+        Location::factory()->create(['name' => 'Port-louis']);
+        Location::factory()->create(['name' => 'flic-en-flac']);
+        Location::factory()->create(['name' => 'Quatre-borne']);
+        Location::factory()->create(['name' => 'Grandbay']);
 
         Idea::factory(100)->create();
 
 
-        // Generate unique votes. Ensure idea_id and user_id are unique for each row
+
+
+
+        // Generate unique votes. Ensure property_id and user_id are unique for each row
         foreach (range(1, 20) as $user_id) {
             foreach (range(1, 100) as $idea_id) {
                 if ($idea_id % 2 === 0) {
