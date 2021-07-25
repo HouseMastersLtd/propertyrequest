@@ -46,7 +46,8 @@
                                 {{ __('Log Out') }}
                             </a>
                         </form>
-                        <img src="{{ Auth::user()->getAvatar() }}" alt="avatar"
+                        <!-- //{{ Auth::user()->getAvatar() }} -->
+                        <img src="" alt="avatar"
                              class="w-10 h-10 rounded-full"/>
                     </div>
 
