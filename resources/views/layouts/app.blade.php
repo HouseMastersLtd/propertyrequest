@@ -46,13 +46,13 @@
                                 {{ __('Log Out') }}
                             </a>
                         </form>
-                        <!-- //{{ Auth::user()->getAvatar() }} -->
-                        <img src="" alt="avatar"
+                        
+                        <img src="{{ Auth::user()->getAvatar() }} " alt="avatar"
                              class="w-10 h-10 rounded-full"/>
                     </div>
 
             @else
-                <img src="{{ Auth::user()->getAvatar() }}" alt="avatar"
+                <img src="" alt="avatar"
                      class="w-10 h-10 rounded-full">
                         <a
                                                     href="{{ route('login') }}"
